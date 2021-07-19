@@ -19,16 +19,14 @@ import { MatDividerModule } from '@angular/material/divider'
 
 @NgModule({
   declarations: [
-    AppComponent],
-    
-
- 
+    AppComponent,
+    MenuComponent
+  ], 
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MenuComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
