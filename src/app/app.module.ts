@@ -1,16 +1,41 @@
+//librerias Externas
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+//componentes
 import { AppComponent } from './app.component';
+
+//modulos
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule, ɵBrowserAnimationBuilder } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { MenuComponent } from './menu/menu.component';
+import {MatSidenavModule } from '@angular/material/sidenav'
+import { MatButtonModule} from '@angular/material/button'
+import {MatIconModule } from '@angular/material/icon'
+import { MatDividerModule } from '@angular/material/divider'
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent],
+    
+
+ 
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MenuComponent,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
