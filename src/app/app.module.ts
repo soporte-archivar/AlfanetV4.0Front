@@ -14,11 +14,15 @@ import {MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule} from '@angular/material/button'
 import {MatIconModule } from '@angular/material/icon'
 import { MatDividerModule } from '@angular/material/divider'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { LandingPageComponent } from './landing-page/landing-page.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    LandingPageComponent
   ], 
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { MatDividerModule } from '@angular/material/divider'
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
