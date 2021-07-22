@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
+  {path: 'menu', component: MenuComponent},
   //Enlace MENU GENEROS
 //   {path: 'generos', component:IndiceGenerosComponent},
 //   {path: 'generos/crear', component:CrearGeneroComponent},

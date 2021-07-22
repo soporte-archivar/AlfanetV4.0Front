@@ -1,1 +1,71 @@
-<p>menu works!</p>
+
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    
+    <!-- <button (click)="opened=!opened" mat-button  class="menu-button">
+        <mat-icon>menu</mat-icon>
+        <span>menu</span>
+    </button> -->
+    <!-- <div>WORKFLOW</div> -->
+
+    </mat-toolbar> 
+
+    
+
+
+    <mat-sidenav-container>
+        <!-- <mat-sidenav [(opened)]="opened" class="mat-elevation-z8" > -->
+            <mat-sidenav #sidenav="matSidenav"  >
+                
+            <img class="avatar mat-elevation-z8" src="https://lh3.googleusercontent.com/ogw/ADea4I6bRwgnAkPkytO75dklV6ZM6SDDtjhxu0mlPMR7gtY=s83-c-mo" />
+
+<h4 class="name">Juan Camilo</h4>
+<p class="designation">Software Engineer</p>
+
+<mat-divider></mat-divider>
+
+            <button mat-button class="menu-button">
+                <mat-icon>home</mat-icon>
+                <span> Inicio</span>
+            </button>
+
+            <button mat-button class="menu-button">
+                <mat-icon>folder_open</mat-icon>
+                <span> Documentos</span>
+            </button>
+
+            <button mat-button class="menu-button">
+                <mat-icon>stars</mat-icon>
+                <span> Administración</span>
+            </button>
+
+            <button mat-button class="menu-button">
+                <mat-icon>info</mat-icon>
+                <span> Información</span>
+            </button>
+    
+            <mat-divider></mat-divider>
+    
+            <button mat-button class="menu-button">
+                <mat-icon>help</mat-icon>
+                <span> Ayuda</span>
+            </button>
+
+            </mat-sidenav>
+
+        <!-- <mat-sidenav  class="content mat-elevation-z8"> ...
+        </mat-sidenav> -->
+        <mat-sidenav-content>
+           
+            <div class="content mat-elevation-z8">
+                Alfanet!
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
