@@ -1,0 +1,174 @@
+[
+    {
+        "id": 1,
+        "icon": "start",
+        "nombre1": "Inicio",
+        "url": "/",
+        "icono": false,
+        "orden": 0,
+        "hijoin1":"Login",
+        "Login": [
+            {
+                "id": 2,
+                "icon": "home",
+                "nombre": "Iniciar Sesion",
+                "url": "/",
+                "icono": true
+            }
+        ]
+       
+    },
+
+    {
+        "id": 2,
+        "icon": "start",
+        "nombre2": "Documentos",
+        "url": "/",
+        "icono": true,
+        "orden": 1,
+        "hijodoc1":"Recibidos",
+        "hijodoc2":"Enviados",
+        "hijodoc3":"Migracion",
+        "Recibidos": [
+            {
+                "id": 2,
+                "icon": "home",
+                "nombre": "Facturas",
+                "url": "/",
+                "icono": true
+            }
+        ],
+        "Enviados": [
+            {
+                "id": 3,
+                "icon": "home",
+                "nombre": "Plantilla",
+                "url": "/",
+                "icono": true
+            }
+        ],
+        "Migracion": [
+            {
+                "id": 4,
+                "icon": "home",
+                "nombre": "Plantilla",
+                "url": "/",
+                "icono": true
+            }
+        ]
+       
+    },
+    {
+        "id": 1,
+        "icon": "start",
+        "nombre3": "WorkFlow",
+        "url": "/",
+        "icono": false,
+        "orden": 0,
+        "hijowf1":"WorkFlow (Escritorio)",
+        "hijowf2":"Trabajos Anteriores"
+        },
+   
+    {
+        "id": 1,
+        "icon": "start",
+        "nombre4": "Administracion",
+        "url": "/",
+        "icono": true,
+        "orden": 1,
+        "hijo1":"Maestros",
+        "hijo2":"Usuarios",
+        "Maestros": [
+            {
+                "id": 2,
+                "icon": "home",
+                "nombre": "Maestro expedientes",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 3,
+                "icon": "home",
+                "nombre": "Maestro series",
+                "url": "/",
+                "icono": true
+            }
+        ],
+        "Usuarios": [
+            {
+                "id": 1,
+                "icon": "home",
+                "nombre": "WorkFlow",
+                "url": "/inicio",
+                "icono": true
+            }
+        ]
+       
+    },
+    {"id": 2,
+        "icon": "start",
+        "nombre5": "Consultas",
+        "url": "/consulta",
+        "icono": true,
+        "orden": 1,
+        "hijoc1":"Gestion",
+        "Gestion":[
+            {
+                "id": 1,
+                "icon": "home",
+                "nombre": "expedientes",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 2,
+                "icon": "home",
+                "nombre": "recibidos",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 3,
+                "icon": "home",
+                "nombre": "enviados",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 4,
+                "icon": "home",
+                "nombre": "facturas",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 5,
+                "icon": "home",
+                "nombre": "series",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 6,
+                "icon": "home",
+                "nombre": "documentos por serie",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 7,
+                "icon": "home",
+                "nombre": "gestion de tareas",
+                "url": "/",
+                "icono": true
+            },
+            {
+                "id": 8,
+                "icon": "home",
+                "nombre": "inventarios",
+                "url": "/",
+                "icono": true
+            }
+        ]
+       }
+]

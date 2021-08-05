@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginFormComponent } from './loginForm/login.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
-  {path: 'menu', component: MenuComponent},
+  {path: 'inicio', component: LandingPageComponent},
+  {path: 'login', component: LoginFormComponent},
+
+  
   //Enlace MENU GENEROS
 //   {path: 'generos', component:IndiceGenerosComponent},
 //   {path: 'generos/crear', component:CrearGeneroComponent},

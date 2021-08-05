@@ -1,71 +1,406 @@
-
 <mat-toolbar>
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon *ngIf="sidenav.opened">
-            close
-        </mat-icon>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <img
+      class="avatar mat-elevation-z8"
+      src="https://lh3.googleusercontent.com/ogw/ADea4I6bRwgnAkPkytO75dklV6ZM6SDDtjhxu0mlPMR7gtY=s83-c-mo"
+    />
+
+    <h4 class="name">Juan Camilo</h4>
+    <p class="designation">Software Engineer</p>
+
+    <mat-divider></mat-divider>
+    <!-- 
+    <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span> Inicio</span>
     </button>
-    
-    <!-- <button (click)="opened=!opened" mat-button  class="menu-button">
-        <mat-icon>menu</mat-icon>
-        <span>menu</span>
+
+    <button mat-button class="menu-button">
+      <mat-icon>folder_open</mat-icon>
+      <span> Documentos</span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon *ngIf="sidenav.opened" matListIcon>stars</mat-icon>
+      <span> Administración</span>
+      <h4 matLine>name</h4>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span> Información</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span> Ayuda</span>
     </button> -->
-    <!-- <div>WORKFLOW</div> -->
 
-    </mat-toolbar> 
+    <mat-accordion>
+      <!-- 000000000000000000000000000000000000--INICIO--000000000000000000000000000000000 -->
+      <mat-expansion-panel
+        *ngFor="let item of inicio"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
 
-    
-
-
-    <mat-sidenav-container>
-        <!-- <mat-sidenav [(opened)]="opened" class="mat-elevation-z8" > -->
-            <mat-sidenav #sidenav="matSidenav"  >
-                
-            <img class="avatar mat-elevation-z8" src="https://lh3.googleusercontent.com/ogw/ADea4I6bRwgnAkPkytO75dklV6ZM6SDDtjhxu0mlPMR7gtY=s83-c-mo" />
-
-<h4 class="name">Juan Camilo</h4>
-<p class="designation">Software Engineer</p>
-
-<mat-divider></mat-divider>
-
-            <button mat-button class="menu-button">
-                <mat-icon>home</mat-icon>
-                <span> Inicio</span>
-            </button>
-
-            <button mat-button class="menu-button">
-                <mat-icon>folder_open</mat-icon>
-                <span> Documentos</span>
-            </button>
-
-            <button mat-button class="menu-button">
-                <mat-icon>stars</mat-icon>
-                <span> Administración</span>
-            </button>
-
-            <button mat-button class="menu-button">
-                <mat-icon>info</mat-icon>
-                <span> Información</span>
-            </button>
-    
-            <mat-divider></mat-divider>
-    
-            <button mat-button class="menu-button">
-                <mat-icon>help</mat-icon>
-                <span> Ayuda</span>
-            </button>
-
-            </mat-sidenav>
-
-        <!-- <mat-sidenav  class="content mat-elevation-z8"> ...
-        </mat-sidenav> -->
-        <mat-sidenav-content>
-           
-            <div class="content mat-elevation-z8">
-                Alfanet!
+        <div>
+          <button mat-button [matMenuTriggerFor]="menuInicio">
+            {{ item.hijo }}
+          </button>
+          <hr class="lineaDivisoria">
+          <mat-menu #menuInicio="matMenu">
+            <div *ngFor="let login of item.Login">
+              <button mat-menu-item>{{ login.nombre }}</button>
             </div>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+          </mat-menu>
+        </div>
+      </mat-expansion-panel>
+
+      <!-- 0000000000000000000000000000000000000000--DOCUMENTOS--0000000000000000000000000000000000000000000000000 -->
+
+      <mat-expansion-panel
+        *ngFor="let item of documentos"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>
+          <button mat-button [matMenuTriggerFor]="menuRecibidos">
+            {{ item.hijo1 }}
+          </button>
+          <mat-menu #menuRecibidos="matMenu">
+            <div *ngFor="let recibido of item.Recibidos">
+              <button mat-menu-item>{{ recibido.nombre }}</button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+          <!-- hhhhhhh -->
+          <button mat-button [matMenuTriggerFor]="menuEnviados">
+            {{ item.hijo2 }}
+          </button>
+          <mat-menu #menuEnviados="matMenu">
+            <div *ngFor="let enviado of item.Enviados">
+              <button mat-menu-item>{{ enviado.nombre }}</button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+          <!-- hhhhhhh -->
+          <button mat-button>
+            {{ item.hijo3 }}
+          </button>
+          <hr class="lineaDivisoria">
+
+        </div>
+      </mat-expansion-panel>
+
+      <!-- 0000000000000000000000000000000000000000--WORKFLOW--0000000000000000000000000000000000000000000000000 -->
+      <mat-expansion-panel
+        *ngFor="let item of workFlow"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <button mat-button>
+          {{ item.hijo1 }}
+        </button>
+        <hr class="lineaDivisoria">
+        <button mat-button>
+          {{ item.hijo2 }}
+        </button>
+        <hr class="lineaDivisoria">
+      </mat-expansion-panel>
+
+      <!-- hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh--Administracion--hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+      <mat-expansion-panel
+        *ngFor="let item of administracion"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu">
+            {{ item.hijo1 }}
+          </button>
+          <mat-menu #menu="matMenu">
+            <div *ngFor="let maestro of item.Maestros">
+              <button mat-menu-item>{{ maestro.nombre }}</button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+          <button mat-button [matMenuTriggerFor]="menuUsuarios">
+            {{ item.hijo2 }}
+          </button>
+          <mat-menu #menuUsuarios="matMenu">
+            <div *ngFor="let usuario of item.Usuarios">
+              <button mat-menu-item [routerLink]="usuario?.url">
+                {{ usuario.nombre }}
+              </button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>{{ item.hijo3.nombre }}</button>
+          <hr class="lineaDivisoria">
+          <button mat-button>{{ item.hijo4.nombre }}</button>
+          <hr class="lineaDivisoria">
+          <button mat-button>{{ item.hijo5.nombre }}</button>
+          <hr class="lineaDivisoria">
+          <button mat-button>{{ item.hijo6.nombre }}</button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button [matMenuTriggerFor]="menuPlantillas">
+            {{ item.hijo7 }}
+          </button>
+          <mat-menu #menuPlantillas="matMenu">
+            <div *ngFor="let plantilla of item.Plantillas">
+              <button mat-menu-item>
+                {{ plantilla.nombre }}
+              </button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+          <button mat-button [matMenuTriggerFor]="menuInventario">
+            {{ item.hijo8 }}
+          </button>
+          <mat-menu #menuInventario="matMenu">
+            <div *ngFor="let inventario of item.Inventario">
+              <button mat-menu-item>{{ inventario.nombre }}</button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+          <button mat-button [matMenuTriggerFor]="menuReportesLogs">
+            {{ item.hijo9 }}
+          </button>
+          <mat-menu #menuReportesLogs="matMenu">
+            <div *ngFor="let reportelogs of item.Reportes_Logs">
+              <button mat-menu-item>{{ reportelogs.nombre }}</button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+        </div>
+      </mat-expansion-panel>
+      <!-- 0000000000000000000000000000000000--CONSULTAS--000000000000000000000000000000000000000 -->
+
+      <mat-expansion-panel
+        *ngFor="let item of consultas"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <button mat-button [matMenuTriggerFor]="menuGestion">
+            {{ item.hijo1 }}
+          </button>
+          <hr class="lineaDivisoria">
+          <mat-menu #menuGestion="matMenu">
+            <div *ngFor="let gestion of item.Gestion">
+              <button mat-menu-item>
+                {{ gestion.nombre }}
+              </button>
+            </div>
+          </mat-menu>
+
+          <!-- <button mat-button>
+       {{ item.hijo1}}
+     </button>
+     <button mat-button>
+       {{ item.hijo2 }}
+     </button> -->
+        </div>
+      </mat-expansion-panel>
+
+      <!-- 0000000000000000000000000000000000--REPORTES--000000000000000000000000000000000000000 -->
+      <mat-expansion-panel
+        *ngFor="let item of reportes"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <button mat-button [matMenuTriggerFor]="menuDinamicos">
+            {{ item.hijo1 }}
+          </button>
+          <mat-menu #menuDinamicos="matMenu">
+            <div *ngFor="let dinamicos of item.Dinamicos">
+              <button mat-menu-item>
+                {{ dinamicos.nombre }}
+              </button>
+            </div>
+          </mat-menu>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo2.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo3.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo4.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo5.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo6.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo7.nombre }}
+          </button><hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo8.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo9.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo10.nombre }}
+          </button><hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo11.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <div>
+            <button mat-button>
+              {{ item.hijo12.nombre }}
+            </button>
+          </div>
+          <hr class="lineaDivisoria">
+          <button mat-button>
+            {{ item.hijo13.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+        </div>
+      </mat-expansion-panel>
+
+      <!-- 0000000000000000000000000000000000--PRESTAMOS--000000000000000000000000000000000000000 -->
+      <mat-expansion-panel
+        *ngFor="let item of prestamos"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <button mat-button>
+            {{ item.hijo1.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo2.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo3.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+        </div>
+      </mat-expansion-panel>
+
+      <!-- 0000000000000000000000000000000000--AYUDA--000000000000000000000000000000000000000 -->
+
+      <mat-expansion-panel
+        *ngFor="let item of ayuda"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.nombre }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <button mat-button>
+            {{ item.hijo1.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+
+          <button mat-button>
+            {{ item.hijo2.nombre }}
+          </button>
+          <hr class="lineaDivisoria">
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      Alfanet!
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+     
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -6,23 +6,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 //modulos
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule, ɵBrowserAnimationBuilder } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
-import {MatSidenavModule } from '@angular/material/sidenav'
-import { MatButtonModule} from '@angular/material/button'
-import {MatIconModule } from '@angular/material/icon'
-import { MatDividerModule } from '@angular/material/divider'
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { LandingPageComponent } from './landing-page/landing-page.component'
+
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginFormComponent } from './loginForm/login.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    LoginFormComponent
   ], 
   imports: [
     BrowserModule,
@@ -32,12 +33,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule
+    MatCardModule,
+    MatTabsModule,
+    MatCheckboxModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

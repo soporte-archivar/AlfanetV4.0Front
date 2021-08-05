@@ -1,0 +1,47 @@
+<div>
+  <mat-card>
+    <mat-card-title>Iniciar sesión</mat-card-title>
+    <mat-card-content>
+        <mat-tab-group>
+            <mat-tab label="Login"> 
+                <form>
+                    <p>
+                      <mat-form-field>
+                        <input
+                          type="text"
+                          matInput
+                          placeholder="Username"
+                          formControlName="username"
+                        />
+                      </mat-form-field>
+                    </p>
+            
+                    <p>
+                      <mat-form-field>
+                        <input
+                          type="password"
+                          matInput
+                          placeholder="Password"
+                          formControlName="password"
+                        />
+                      </mat-form-field>
+                    </p>
+            
+                    <p *ngIf="error" class="error">
+                      {{ error }}
+                    </p>
+                    <section class="example-section">
+                    <mat-checkbox>Recordármelo la próxima vez</mat-checkbox>
+                </section>
+                <br>
+                    <div class="button">
+                      <button type="submit" mat-button>Inicio de sesión</button>
+                    </div>
+                  </form>
+            </mat-tab>
+            <mat-tab label="About"> Content 2</mat-tab>
+            </mat-tab-group>
+     
+    </mat-card-content>
+  </mat-card>
+</div>

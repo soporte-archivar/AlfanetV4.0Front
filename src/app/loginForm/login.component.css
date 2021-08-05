@@ -1,0 +1,51 @@
+.mat-card{
+background-color: #eff3fbf0;
+}
+
+.mat-card:not([class*=mat-elevation-z]){
+    box-shadow:  0px 2px 1px -1px #002b5c, 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);;
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+  .mat-form-field {
+     
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title{
+color: #002b5c ;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  .mat-button{
+    background-color: #002c61c7;
+    color: white;
+  }
+
+  .button {
+      
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
+  
+ 
