@@ -1,7 +1,11 @@
 <div>
   <mat-card>
     <mat-card-title>Iniciar sesión</mat-card-title>
+    <div>
+      <img src="./assets/descarga.jpg" style="border-radius: 2%;">
+    </div>
     <mat-card-content>
+      
         <mat-tab-group>
             <mat-tab label="Login"> 
                 <form>
@@ -39,7 +43,43 @@
                     </div>
                   </form>
             </mat-tab>
-            <mat-tab label="About"> Content 2</mat-tab>
+            <mat-tab label="Password"> Cambiar contraseña
+              <p>
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Contraseña"
+                  formControlName="Contraseña"
+                />
+              </mat-form-field>
+            </p>
+              <p>
+                <mat-form-field>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Nueva Contraseña"
+                    formControlName="Nueva_Contraseña"
+                  />
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Confirmar Contraseña"
+                    formControlName="Confirmar_Contraseña"
+                  />
+                </mat-form-field>
+              </p>
+              <div class="button" >
+                <button type="submit"   mat-button class="cancelar">Cancelar</button>
+              
+                <button type="submit"  mat-button>Cambiar Contraseña</button>
+              </div>
+            </mat-tab>
             </mat-tab-group>
      
     </mat-card-content>

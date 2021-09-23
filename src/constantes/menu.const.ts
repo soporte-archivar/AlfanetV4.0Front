@@ -252,7 +252,7 @@ export const Inicio = [
                 "id": 402,
                 "icon": "home",
                 "nombre": "Iniciar Sesion",
-                "url": "/",
+                "url": "/login",
                 "icono": true
             }
         ]

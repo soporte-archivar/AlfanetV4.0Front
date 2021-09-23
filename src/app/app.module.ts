@@ -24,6 +24,7 @@ import { LoginFormComponent } from './loginForm/login.component'
     MenuComponent,
     LandingPageComponent,
     LoginFormComponent
+    
   ], 
   imports: [
     BrowserModule,
@@ -36,7 +37,6 @@ import { LoginFormComponent } from './loginForm/login.component'
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule
-   
   ],
   providers: [],
   bootstrap: [AppComponent]

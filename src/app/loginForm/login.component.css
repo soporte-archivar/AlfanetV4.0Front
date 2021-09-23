@@ -46,6 +46,11 @@ color: #002b5c ;
     justify-content: flex-end;
   }
   
-  
+  .cancelar{
+    background-color: white;
+  border: 2px solid gray;
+    color: black;
+    margin-right: 80px;
+  }
   
  

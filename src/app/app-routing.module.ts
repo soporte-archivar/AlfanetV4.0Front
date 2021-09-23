@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { NgModule, Component } from '@angular/core';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginFormComponent } from './loginForm/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { AppComponent } from './app.component';
+
 
 const routes: Routes = [
-  {path: 'inicio', component: LandingPageComponent},
+  {path: 'landingpage', component: LandingPageComponent},
+  {path: 'inicio', component: LandingPageComponent,
+  canActivate:[AuthGuard]},
   {path: 'login', component: LoginFormComponent},
 
   

@@ -69,7 +69,7 @@
           <hr class="lineaDivisoria">
           <mat-menu #menuInicio="matMenu">
             <div *ngFor="let login of item.Login">
-              <button mat-menu-item>{{ login.nombre }}</button>
+              <button mat-menu-item routerLink="/login">{{ login.nombre }}</button>
             </div>
           </mat-menu>
         </div>
@@ -129,7 +129,7 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <button mat-button>
+        <button mat-button routerLink="/landingpage">
           {{ item.hijo1 }}
         </button>
         <hr class="lineaDivisoria">
@@ -167,7 +167,7 @@
           </button>
           <mat-menu #menuUsuarios="matMenu">
             <div *ngFor="let usuario of item.Usuarios">
-              <button mat-menu-item [routerLink]="usuario?.url">
+              <button mat-menu-item [routerLink]="['inicio']">
                 {{ usuario.nombre }}
               </button>
             </div>
@@ -395,12 +395,8 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div class="content mat-elevation-z8">
-      Alfanet!
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-     
-    </div>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
