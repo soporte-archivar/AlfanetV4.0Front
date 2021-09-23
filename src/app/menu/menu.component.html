@@ -89,7 +89,7 @@
         </mat-expansion-panel-header>
 
         <div>
-          <button mat-button [matMenuTriggerFor]="menuRecibidos">
+          <button mat-button [matMenuTriggerFor]="menuRecibidos" routerLink="/recibidos">
             {{ item.hijo1 }}
           </button>
           <mat-menu #menuRecibidos="matMenu">
@@ -99,7 +99,7 @@
           </mat-menu>
           <hr class="lineaDivisoria">
           <!-- hhhhhhh -->
-          <button mat-button [matMenuTriggerFor]="menuEnviados">
+          <button mat-button [matMenuTriggerFor]="menuEnviados"  routerLink="/enviados">
             {{ item.hijo2 }}
           </button>
           <mat-menu #menuEnviados="matMenu">

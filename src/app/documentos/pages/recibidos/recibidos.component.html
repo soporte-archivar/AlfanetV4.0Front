@@ -1,0 +1,90 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3>Documentos Recibidos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="row mt-4">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card body">
+                    <h5>{{ accion }} Radicados</h5>
+
+                   <!-- <form [formGroup]!="form" (ngSubmit)="agregarRadicado()">
+                         Textbox Titular Radicado Credito 
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-user" [class.green-icon]="this.form.get('titular')?.valid" 
+                                [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched "></i>
+                            </span>
+                            <input formControlName="titular" type="text" class="form-control" placeholder="Titular">
+                        </div>
+                         Textbox Radicado Credito 
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-credit-card" [class.green-icon]="this.form.get('numeroRadicado')?.valid" 
+                                [class.red-icon]="this.form.get('numeroRadicado')?.invalid && this.form.get('numeroRadicado')?.touched"></i>
+                            </span>
+                            <input formControlName="numeroRadicado" type="text" class="form-control" 
+                            placeholder="Numero de Radicado" maxlength="16">
+                        </div>
+                         Textbox Fecha Expiración y CVV 
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="input-group input-group-lg mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-calendar-alt" [class.green-icon]="this.form.get('fechaExpiracion')?.valid" 
+                                        [class.red-icon]="this.form.get('fechaExpiracion')?.invalid && this.form.get('fechaExpiracion')?.touched"></i>
+                                    </span>
+                                    <input formControlName="fechaExpiracion" type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group input-group-lg mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-key" [class.green-icon]="this.form.get('cvv')?.valid" 
+                                        [class.red-icon]="this.form.get('cvv')?.invalid && this.form.get('cvv')?.touched"></i>
+                                    </span>
+                                    <input formControlName="cvv" type="password" class="form-control" placeholder="CVV">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-grid gap-2">
+                                
+                                <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="this.form.invalid">
+                                    <i class="fas fa-database"></i>&nbsp; ACEPTAR
+                                </button>
+                            </div>
+                        </div>
+                    </form>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card body">
+                    <h5>Listado de Radicados</h5>
+                    <table class="table">
+                        <tr *ngFor="let Radicado of listRadicados;">
+                            <td> {{ Radicado.titular }}</td>
+                            <td> {{ Radicado.numeroRadicado }}</td>
+                            <td> {{ Radicado.fechaExpiracion }}</td>
+                            <td><i (click)="EditarRadicado(Radicado)" class="far fa-edit text-info"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="color: black;">
+
+                <h2>Desarrollado por: Juan D. Figueredo E. ®</h2>
+            </div>
+        </div>
+    </div> 
+</div>

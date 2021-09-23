@@ -5,6 +5,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginFormComponent } from './loginForm/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from './app.component';
+import { RecibidosComponent } from './documentos/pages/recibidos/recibidos.component';
+import { EnviadosComponent } from './documentos/pages/enviados/enviados.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,9 @@ const routes: Routes = [
   {path: 'inicio', component: LandingPageComponent,
   canActivate:[AuthGuard]},
   {path: 'login', component: LoginFormComponent},
+  //Documentos
+  {path: 'recibidos', component: RecibidosComponent},
+  {path: 'enviados', component: EnviadosComponent},
 
   
   //Enlace MENU GENEROS
